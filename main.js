@@ -35,7 +35,7 @@ function checkPassword(password){
     if(re.test(password.value.trim())){
         showSuccess(password);
     }else{
-        showError(password, `${getFieldName(password)} must contains lowercase and one numeric character or has at least one uppercase and one numeric character.`)
+        showError(password, `${getFieldName(password)} must contains lowercase and one numeric character or has at least one uppercase and one lowercase.`)
     }
 }
 
