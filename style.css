@@ -58,24 +58,25 @@ form .form-control input{
     font-size:16px;
     padding: 0.5rem;
     border-radius: 5px;
-    font-family: 'Shadows Into Light', cursive;
+   
 }
 
 form .form-control input:focus{
     outline: 0;
     color: #777;
 }
-
+/*SUCCESS*/
 .form-control.success input {
     border-color: var(--success-color);
 }
-
+/*ERROR*/
 .form-control.error input {
     border-color: var(--error-color);
 }
 
 .form-control.error small{
     visibility: visible;
+    color: red;
 }
 
 form .form-control small{
