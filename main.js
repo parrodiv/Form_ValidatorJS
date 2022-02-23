@@ -30,6 +30,15 @@ function checkEmail(email){
     }
 }
 
+function checkPassword(password){
+    const re = /^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})/;
+    if(re.test(password.value.trim())){
+        showSuccess(password);
+    }else{
+        showError(password, `${getFieldName(password)} must contains lowercase and one numeric character or has at least one uppercase and one numeric character.`)
+    }
+}
+
 //CHECK PASSWORDS MATCH
 function checkPasswordsMatch(input1, input2){
     if (input1.value !== input2.value){
@@ -72,7 +81,7 @@ form.addEventListener('submit', (e) => {
 
     checkRequired([username, email, password, password2]);
     checkLength(username, 3, 15);
-    checkLength(password, 6, 20);
     checkEmail(email);
+    checkPassword(password);
     checkPasswordsMatch(password, password2);
 })
